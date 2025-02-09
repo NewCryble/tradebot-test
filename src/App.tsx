@@ -1,5 +1,6 @@
 import "./App.css";
-import { Header, Graph, Bots } from "./components";
+import { Header, Graph, Bots, Filter } from "./components";
+import { Footer } from "./components/footer";
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
           <Header />
           <Graph />
           <Bots />
+          <Filter />
+          <Footer />
         </div>
       </div>
     </>

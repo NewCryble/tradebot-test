@@ -127,3 +127,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.container-box {
+  margin: 16px 1rem 0 1rem;
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
