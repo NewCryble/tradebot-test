@@ -2,9 +2,9 @@ import clsx from "clsx";
 import React from "react";
 import dashboardSvg from "/footer-icons/dashboard.svg";
 import megaBotSvg from "/footer-icons/megabot.svg";
-import botMarketSvg from "/footer-icons/megabot.svg";
-import coinPricesSvg from "/footer-icons/megabot.svg";
-import profileSvg from "/footer-icons/megabot.svg";
+import botMarketSvg from "/footer-icons/botmarket.svg";
+import coinPricesSvg from "/footer-icons/coinPrices.svg";
+import profileSvg from "/footer-icons/profile.svg";
 
 interface Props {
   page: string;
@@ -12,7 +12,7 @@ interface Props {
   className?: string;
 }
 
-const pageNames = {
+const pageNames: Record<string, string> = {
   Dashboard: dashboardSvg,
   Megabot: megaBotSvg,
   Botmarket: botMarketSvg,
@@ -25,7 +25,9 @@ export const PagePicker: React.FC<Props> = ({
   page,
   notifications,
 }) => {
-  console.log(page.split(" ").join(""));
+  const pageJoined: string = page.slice().split(" ").join("");
+  console.log(pageNames[pageJoined]);
+
   return (
     <div
       className={clsx(
@@ -33,11 +35,11 @@ export const PagePicker: React.FC<Props> = ({
         "relative flex flex-col items-center justify-center flex-gap-1"
       )}
     >
-      <img src={pageNames[page]} alt={""} width={25} height={25} />
+      <img src={pageNames[pageJoined]} alt={""} width={25} height={25} />
       <p className={clsx("text-xs text-white/50")}>{page}</p>
-      {notifications ? (
+      {page === "Profile" && notifications ? (
         <div className="absolute top-0 right-0 ">
-          <svg width={14} height={14}>
+          <svg width={15} height={15}>
             <circle
               cx="7"
               cy="7"
@@ -45,6 +47,9 @@ export const PagePicker: React.FC<Props> = ({
               stroke="none"
               fill="oklch(0.769 0.188 70.08)"
             />
+            <text fontSize={10} x={4.5} y={10} fill="white">
+              {notifications}
+            </text>
           </svg>
         </div>
       ) : (

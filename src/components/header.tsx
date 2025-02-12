@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import refreshSvg from "../../public/refresh.svg";
 import clsx from "clsx";
+import refreshSvg from "/refresh.svg";
 
 export const Header: React.FC = () => {
   const [isPageLoading, setIsPageLoading] = useState(false);

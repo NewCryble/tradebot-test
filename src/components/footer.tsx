@@ -24,7 +24,7 @@ export const Footer: React.FC<Props> = ({ className }) => {
         )}
       >
         {pageNames.map((page) => (
-          <PagePicker page={page} notifications={2} />
+          <PagePicker page={page} notifications={2} className="py-0.5 px-1" />
         ))}
       </div>
     </div>
